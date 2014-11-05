@@ -7,6 +7,3 @@
     <li><a href="http://jquery.com/">jQuery</a></li>
     <li><a href="http://julian.com/research/velocity/" title="Get Velocity.js">Velocity.js</a></li>
 </ul>
-
-
-
