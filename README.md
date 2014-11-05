@@ -1,0 +1,4 @@
+lightbox
+========
+
+Simple lightbox overlay
