@@ -35,25 +35,25 @@ toolbox.lightbox = (function() {
         });
 
         $window.resize(function() {
-            resizeOverlay();
+            repositionOverlay();
         });
 
     }
 
     var showOverlay = function(content) {
 
-        //Add content to lightbox
+        //Add content to the lightbox before it is displayed
         $innerContentContainer.html(content);
 
-        //Open lightbox
+        //Add visibility to get accurate dimensions of lightbox
         $lightbox.velocity({
             opacity: 1
         }, {
             duration: 100,
             display: 'block',
             complete: function() {
-                $lightbox.toggleClass('open');
-                resizeOverlay();
+                $lightbox.toggleClass('open'); //Add "open" class for CSS styles 
+                repositionOverlay(); //Make sure the lightbox is centered in the browser window
             }
         });
 
@@ -66,24 +66,22 @@ toolbox.lightbox = (function() {
             duration: 200,
             display: 'none',
             begin: function() {
-                $lightbox.toggleClass('open'); //Adds open class to initiate CSS3 animations
+                $lightbox.toggleClass('open');
             }
         });
     };
 
-    var resizeOverlay = function() {
-
+    var repositionOverlay = function() {
         if ($contentContainer.height() > $window.height()) {
             $contentContainer.velocity({
                 marginTop: '0',
                 marginBottom: '0'
             });
         } else {
-            //Center the content container vertically
             $contentContainer.velocity({
                 marginTop: ( $window.height() - $contentContainer.outerHeight() ) / 2
             }, {
-                duration: 100    
+                duration: 0    
             });
         }
     };
