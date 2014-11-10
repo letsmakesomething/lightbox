@@ -1,31 +1,40 @@
 body {
-    background-color: #ccffff;
-    padding: 100px 30%;
+   background-color: #ccffff;
+   padding: 100px 30%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #003333;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    line-height: 1.5;
+   color: #003333;
+   margin-bottom: 20px;
+   font-size: 2.5em;
+   line-height: 1.5;
 }
 
 p {
-    margin-bottom: 20px;
-    color: #007f7f;
-    font-size: 1.125em;
-    line-height: 1.5;
+   margin-bottom: 20px;
+   color: #007f7f;
+   font-size: 1.125em;
+   line-height: 1.5;
 }
 
 .start {
-    width: 175px;
-    padding: 10px;
-    background-color: #003333;
-    border-radius: 6px;
-    text-align: center;
+   width: 175px;
+   padding: 10px;
+   background-color: #003333;
+   border-radius: 6px;
+   text-align: center;
 }
 
 .start a {
-    color: #e5ffff;
-    text-decoration: none;
+   color: #e5ffff;
+   text-decoration: none;
+}
+
+/* Mobile portrait */
+
+@media screen and (max-width: 320px) {
+   body {
+      background-color: #ccffff;
+      padding: 20px;
+   }
 }

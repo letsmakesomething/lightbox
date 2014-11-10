@@ -45,19 +45,24 @@ toolbox.lightbox = (function() {
         //Add content to the lightbox before it is displayed
         $innerContentContainer.html(content);
 
-        //Add display block to get dimensions for repositioning
-        $lightbox.velocity({
-            opacity: 0
+        $lightbox
+        //Pre-animation
+        .velocity({
+            opacity: 0,
+            marginTop: '500px'
         }, {
             duration: 0,
             display: 'block'
-        }).velocity({
-            opacity: 1
+        })
+        //Animate in
+        .velocity({
+            opacity: 1,
+            marginTop: '0'
         }, {
-            duration: 100,
+            duration: 300,
             display: 'block',
             begin: function() {
-                $lightbox.toggleClass('open'); //Add "open" class for CSS styles 
+                $lightbox.toggleClass('open'); //Add "open" class for CSS styles/animations
                 repositionOverlay(); //Make sure the lightbox is centered in the browser window
             }
         });
@@ -65,11 +70,11 @@ toolbox.lightbox = (function() {
     };
 
     var closeOverlay = function() {
-        console.log($contentContainer.outerHeight());
         $lightbox.velocity({
-            opacity: 0
+            opacity: 0,
+            marginTop: '-500px'
         }, {
-            duration: 200,
+            duration: 300,
             display: 'none',
             begin: function() {
                 $lightbox.toggleClass('open');
